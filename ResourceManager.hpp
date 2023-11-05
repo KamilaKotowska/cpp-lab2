@@ -4,21 +4,20 @@ class ResourceManager
 {
 public:
 	ResourceManager() {
-		// konstruktor domyślny klasy ResourceManager
-		data = new Resource();
+		zasoby = new Resource();
 	}
 	~ResourceManager() {
-		delete data;
+		delete zasoby;
 	}
-	// metoda double get
+
 	double get() {
-		return data->get();
+		return zasoby.get();
 }
 
 ResourceManager& operator=(const Resource& t) { return *this; }
 
 private: 
-	Resource* data;
+	Resource* zasoby;
 
 };
 
@@ -55,21 +54,20 @@ public:
 	int dlugosc;
 
 private:
-	
+	int pojemnosc=10;
 	double* vektor;
 
 
-Wektor(int n) :pojemnosc(p) {
-	vektor = new double[pojemnosc];
-	for (int i = 0; i < pojemnosc; i++)
-		vektor[i] = 0;
-}
-~Wektor() { delete[] vektor; }
+	//Wektor(int n) :pojemnosc(p) {
+	//	vektor = new double[pojemnosc];
+	//	for (int i = 0; i < pojemnosc; i++)
+	//		vektor[i] = 0;
+	//}
+	//~Wektor() { delete[] vektor; }
 
 
 };
 
 int Wektor::get_vol() {
 	return this->pojemnosc;
-
 }
